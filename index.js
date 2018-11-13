@@ -10,9 +10,7 @@ app.use(bodyParser.urlencoded())
 const port = process.env.PORT || 3000
 
 app.get('/', async (request, response) => {
-    const content = await axios.get('https://como-fazer-xumes.firebaseio.com/teste.json')
-
-    response.render('index', { i: content.data })
+    response.render('index')
 })
 
 app.use('/categorias', categorias)
